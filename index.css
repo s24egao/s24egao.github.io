@@ -1,0 +1,198 @@
+html {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	cursor: none;
+	background: black;
+}
+
+body {
+	margin: 0px;
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+#info {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 400px;
+	height: 100%;
+	overflow: hidden;;
+	background-image: linear-gradient(rgb(255, 255, 255) 60%, rgb(150, 200, 255));
+	transition-duration: 0.5s;
+	z-index: 1;
+}
+
+#info-text {
+	display: flex;
+	overflow: hidden;
+	width: 260px;
+	height: 200px;
+}
+
+#info-text-container {
+	position: relative;
+	display: flex;
+	width: 260px;
+	height: 200px;
+	left: 0px;
+	transition-duration: 0.5s;
+}
+
+#info-text-container div {
+	flex: 0 0 100%;
+	width: 260px;
+	color: #999999;
+	font-family: Noto Sans TC;
+	font-size: 18px;
+	font-weight:300;
+	line-height: 27px;
+	margin: 50px 0px 30px 0px;
+	-webkit-user-select: none;
+	transition-duration: 0.5s;
+}
+
+#info-text-container div:hover {
+	color: #666666;
+}
+
+#info-tag {
+	position: absolute;
+	font-family: Noto Sans TC;
+	font-size: 120px;
+	font-weight: 900;
+	color: transparent;
+	transform-origin: center;
+	transform: rotate(-90deg);
+	right: -100px;
+	bottom: 65px;
+	-webkit-text-stroke: 2px white;
+	-webkit-user-select: none;
+	transition-duration: 0.5s;
+}
+
+#info:hover #info-tag {
+	color: white;
+}
+
+#porfile_pic canvas {
+	transition-duration: 0.3s;
+	transform: scale(1);
+}
+
+#porfile_pic:hover canvas {
+	transform: scale(1.2);
+}
+
+.link {
+	width: 100px;
+	height: 20px;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	text-decoration: none;
+	color: black;
+	-webkit-user-select: none;
+	transition-duration: 0.2s;
+}
+
+.link:hover {
+	width: 120px;
+}
+
+.link div {
+	font-family: Noto Serif TC;
+	font-weight: 300;
+	font-size: 18px;
+	transform: translateY(2px);
+}
+
+#gallery-tag {
+	position: absolute;
+	font-family: Noto Sans TC;
+	font-size: 120px;
+	font-weight: 900;
+	color: transparent;
+	transform-origin: center;
+	transform: rotate(-90deg);
+	right: -220px;
+	bottom: 180px;
+	-webkit-text-stroke: 2px #333333;
+	-webkit-user-select: none;
+	transition-duration: 0.5s;
+}
+
+#gallery:hover #gallery-tag {
+	color: #333333;
+}
+
+.image {
+	display: inline-block;
+	margin: 20px;
+	height: 260px;
+}
+
+.image img, .image video {
+	display: block;
+	height: 100%;
+	transition-duration: 0.3s;
+	transform: scale(1);
+	-webkit-user-select: none;
+}
+
+.image img:hover, .image video:hover {
+	transform: scale(1.1);
+}
+
+.filter-button {
+	position: relative;
+	margin: 0px 20px 0px 20px;
+	display: inline;
+	text-align: center;
+	color: white;
+	font-family: Noto Sans TC;
+	font-size: 24px;
+	font-weight: 300;
+	transition-duration: 0.3s;
+	-webkit-user-select: none;
+}
+
+div::-webkit-scrollbar {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	#info {
+		position: fixed;
+		width: 100%;
+		left: 0%;
+	}
+
+	.image {
+		height: auto;
+		width: 300px;
+	}
+
+	.image img, .image video {
+		height: auto;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+	.image {
+		height: auto;
+		width: 300px;
+	}
+
+	.image img, .image video {
+		height: auto;
+		width: 100%;
+	}
+}
