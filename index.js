@@ -33,7 +33,7 @@ for(let item of gallery) {
 				$('#images').append(`<div class="image ${item.class}"><img src="${item.src}" alt="" draggable="false"></div>`)
 			break;
 		case 'video':
-				$('#images').append(`<div class="image ${item.class}"><video loop muted disablepictureinpicture><source src="${item.src}" type="video/mp4"></video></div>`)
+				$('#images').append(`<div class="image ${item.class}"><video autoplay loop muted playsinline disablepictureinpicture><source src="${item.src}" type="video/mp4"></video></div>`)
 			break;
 	}
 }

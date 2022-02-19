@@ -13,6 +13,10 @@ body {
 	height: 100%;
 }
 
+a {
+	cursor: none;
+}
+
 #info {
 	position: relative;
 	display: flex;
@@ -153,7 +157,7 @@ body {
 .filter-button {
 	position: relative;
 	margin: 0px 20px 0px 20px;
-	display: inline;
+	display: inline-block;
 	text-align: center;
 	color: white;
 	font-family: Noto Sans TC;
@@ -161,6 +165,10 @@ body {
 	font-weight: 300;
 	transition-duration: 0.3s;
 	-webkit-user-select: none;
+}
+
+.filter-button:hover {
+	transform: translateY(-8px);
 }
 
 div::-webkit-scrollbar {

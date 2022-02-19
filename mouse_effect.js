@@ -1,7 +1,7 @@
 const mouse_effect = p => {
 	class particle {
 		constructor(x, y) {
-			this.pos = p.createVector(x + p.random(-20, 20), y + p.random(-20, 20))
+			this.pos = p.createVector(x + p.random(-10, 10), y + p.random(-10, 10))
 			this.time = 25
 			this.direction = p.random(p.TWO_PI)
 			this.size = p.random(15, 50)
