@@ -15,7 +15,7 @@ const bg = p => {
 	p.particles = []
 
 	p.setup = () => {
-		p.createCanvas(p.windowWidth - 400, p.windowHeight)
+		p.createCanvas(p.windowWidth - ((p.windowWidth > 600)? 400 : 0), p.windowHeight)
 		p.background(0)
 		p.rectMode(p.CENTER)
 		p.stroke(255)
