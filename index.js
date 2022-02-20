@@ -96,7 +96,7 @@ $('#info-text').click(() => {
 let show_info = true
 
 $('#info-click').click(() => {
-	if(window.innerWidth > 600) return
+	if(window.innerWidth > 720) return
 	if(show_info) $('#info').css('left', '-95%')
 	else $('#info').css('left', '0%')
 	show_info = !show_info
@@ -104,7 +104,7 @@ $('#info-click').click(() => {
 
 $(window).resize(() => {
 	if(show_info) return
-	if(window.innerWidth <= 600) return
+	if(window.innerWidth <= 720) return
 	show_info = true
 	$('#info').css('left', '0%')
 })

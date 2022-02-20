@@ -29,6 +29,7 @@ const mouse_effect = p => {
 
 	p.draw = () => {
 		p.clear()
+		if(p.mouseIsPressed) p.mouseMoved()
 		for(let item of p.particles) { item.update() }
 		p.particles = p.particles.filter(item => item.time > 0)
 	}

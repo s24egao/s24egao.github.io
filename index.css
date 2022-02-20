@@ -26,7 +26,7 @@ a {
 	width: 400px;
 	height: 100%;
 	overflow: hidden;;
-	background-image: linear-gradient(rgb(255, 255, 255) 60%, rgb(150, 200, 255));
+	background: white;
 	transition-duration: 0.5s;
 	z-index: 1;
 }
@@ -43,6 +43,7 @@ a {
 	display: flex;
 	width: 260px;
 	height: 200px;
+	margin: 50px 0px 0px 0px;
 	left: 0px;
 	transition-duration: 0.5s;
 }
@@ -55,7 +56,6 @@ a {
 	font-size: 18px;
 	font-weight:300;
 	line-height: 27px;
-	margin: 50px 0px 30px 0px;
 	-webkit-user-select: none;
 	transition-duration: 0.5s;
 }
@@ -74,16 +74,17 @@ a {
 	transform: rotate(-90deg);
 	right: -100px;
 	bottom: 65px;
-	-webkit-text-stroke: 2px white;
+	-webkit-text-stroke: 2px #eeeeee;
 	-webkit-user-select: none;
 	transition-duration: 0.5s;
 }
 
 #info:hover #info-tag {
-	color: white;
+	color: #eeeeee;
 }
 
 #porfile_pic canvas {
+	width: 100%;
 	transition-duration: 0.3s;
 	transform: scale(1);
 }
@@ -93,9 +94,9 @@ a {
 }
 
 .link {
-	width: 100px;
+	width: 120px;
 	height: 20px;
-	background: white;
+	background: #eeeeee;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -107,12 +108,12 @@ a {
 }
 
 .link:hover {
-	width: 120px;
+	width: 150px;
 }
 
 .link div {
-	font-family: Noto Serif TC;
-	font-weight: 300;
+	font-family: Noto Sans TC;
+	font-weight: 500;
 	font-size: 18px;
 	transform: translateY(2px);
 }
@@ -139,7 +140,8 @@ a {
 .image {
 	display: inline-block;
 	margin: 20px;
-	height: 260px;
+	height: 250px;
+	transition-duration: 0.3s;
 }
 
 .image img, .image video {
@@ -175,7 +177,7 @@ div::-webkit-scrollbar {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
 	#info {
 		position: fixed;
 		width: 100%;
@@ -184,7 +186,7 @@ div::-webkit-scrollbar {
 
 	.image {
 		height: auto;
-		width: 300px;
+		max-width: 400px;
 	}
 
 	.image img, .image video {
@@ -193,7 +195,7 @@ div::-webkit-scrollbar {
 	}
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px) {
+@media screen and (min-width: 721px) and (max-width: 900px) {
 	.image {
 		height: auto;
 		width: 300px;

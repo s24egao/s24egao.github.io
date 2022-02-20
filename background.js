@@ -15,7 +15,7 @@ const bg = p => {
 	p.particles = []
 
 	p.setup = () => {
-		p.createCanvas(p.windowWidth - ((p.windowWidth > 600)? 400 : 0), p.windowHeight)
+		p.createCanvas(p.windowWidth - ((p.windowWidth > 720)? 400 : 0), p.windowHeight)
 		p.background(0)
 		p.rectMode(p.CENTER)
 		p.stroke(255)
@@ -30,7 +30,7 @@ const bg = p => {
 	}
 
 	p.windowResized = () => {
-		p.resizeCanvas(p.windowWidth - ((p.windowWidth > 600)? 400 : 0), p.windowHeight)
+		p.resizeCanvas(p.windowWidth - ((p.windowWidth > 720)? 400 : 0), p.windowHeight)
 		for(let item of p.particles) { item.x = p.random(0, p.width) }
 	}
 }
