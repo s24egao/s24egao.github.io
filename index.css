@@ -4,6 +4,7 @@ html {
 	overflow: hidden;
 	cursor: none;
 	background: black;
+	-webkit-user-select: none;
 }
 
 body {
