@@ -1,5 +1,5 @@
 const mouse_effect = p => {
-	class particle {
+	class Particle {
 		constructor(x, y) {
 			this.pos = p.createVector(x + p.random(-10, 10), y + p.random(-10, 10))
 			this.time = 25
@@ -36,7 +36,7 @@ const mouse_effect = p => {
 
 	p.mouseMoved = () => {
 		if(p.frameCount % 2 == 1) return
-		p.particles.push(new particle(p.mouseX, p.mouseY))
+		p.particles.push(new Particle(p.mouseX, p.mouseY))
 	}
 
 	p.windowResized = () => {
