@@ -27,6 +27,7 @@ float noise(float s) {
 
 void main() {
 	vec2 st = gl_FragCoord.xy / resolution;
+	st.y = 1.0 - st.y;
 	
 	vec4 color = texture2D(mainTex, st + vec2(noise(st.x * 100.0) * 0.1, 0));
 	gl_FragColor = color;

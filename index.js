@@ -1,41 +1,8 @@
-let gallery = [
-	{ type: 'image', class: 'filter3', src: 'images/image1.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image2.mp4' },
-	{ type: 'image', class: 'filter3', src: 'images/image3.jpg' },
-	{ type: 'video', class: 'filter4', src: 'images/image4.mp4', link: 'https://openprocessing.org/sketch/1481895' },
-	{ type: 'image', class: 'filter3', src: 'images/image5.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image6.mp4' },
-	{ type: 'image', class: 'filter2', src: 'images/image7.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image8.mp4' },
-	{ type: 'image', class: 'filter2', src: 'images/image9.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image10.mp4' },
-	{ type: 'image', class: 'filter4', src: 'images/image11.jpg', link: 'https://openprocessing.org/sketch/1396172' },
-	{ type: 'video', class: 'filter3', src: 'images/image12.mp4' },
-	{ type: 'image', class: 'filter2', src: 'images/image13.jpg' },
-	{ type: 'video', class: 'filter4', src: 'images/image14.mp4', link: 'https://openprocessing.org/sketch/1390398' },
-	{ type: 'image', class: 'filter4', src: 'images/image15.jpg', link: 'https://openprocessing.org/sketch/1396172' },
-	{ type: 'video', class: 'filter4', src: 'images/image16.mp4', link: 'https://openprocessing.org/sketch/1392682' },
-	{ type: 'image', class: 'filter2', src: 'images/image17.jpg' },
-	{ type: 'video', class: 'filter4', src: 'images/image18.mp4', link: 'https://openprocessing.org/sketch/1396105' },
-	{ type: 'image', class: 'filter3', src: 'images/image19.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image20.mp4' },
-	{ type: 'image', class: 'filter3', src: 'images/image21.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image22.mp4' },
-	{ type: 'image', class: 'filter2', src: 'images/image23.jpg' },
-	{ type: 'video', class: 'filter4', src: 'images/image24.mp4', link: 'https://openprocessing.org/sketch/1466763' },
-	{ type: 'image', class: 'filter3', src: 'images/image25.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image26.mp4' },
-	{ type: 'image', class: 'filter4', src: 'images/image27.jpg', link: 'https://openprocessing.org/sketch/1495466' },
-	{ type: 'image', class: 'filter4', src: 'images/image28.jpg', link: 'https://openprocessing.org/sketch/1495466' },
-	{ type: 'image', class: 'filter3', src: 'images/image29.jpg' },
-	{ type: 'video', class: 'filter1', src: 'images/image30.mp4' },
-]
-
 for(let card of gallery) {
 	let media
 	if(card.type == 'image') media = `<img src="${card.src}" alt="" draggable="false"${(card.link)? ` class="image-link"` : ``}">`
 	if(card.type == 'video') media = `<video autoplay loop muted playsinline disablepictureinpicture${(card.link)? ` class="image-link"` : ``}><source src="${card.src}" type="video/mp4"></video>`
-	$('#images').append(`<div class="image ${card.class}"><a${(card.link)? ` href="${card.link}" target="_blank"` : ``}>${media}</a></div>`)
+	$('#contents').append(`<div class="image ${card.class}"><a${(card.link)? ` href="${card.link}" target="_blank"` : ``}>${media}</a></div>`)
 }
 
 let callback = (entries, observer) => {

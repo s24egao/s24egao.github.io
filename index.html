@@ -11,6 +11,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="contents.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="info">
@@ -52,7 +53,7 @@
 	<div id="gallery" style="flex: 1; position: relative; overflow: hidden; height: 100%;">
 		<div id="bg" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
 		<div id="gallery-tag">GALLERY</div>
-		<div id="images" style="display: block; padding: 30px; margin: 0px 30px 0px 0px; height: 100%; overflow-x: hidden; overflow-y: scroll; -webkit-box-sizing: border-box;"></div>
+		<div id="contents" style="display: block; padding: 30px; margin: 0px 30px 0px 0px; height: 100%; overflow-x: hidden; overflow-y: scroll; -webkit-box-sizing: border-box;"></div>
 		<div style="position: absolute; width: 700px; transform-origin: right bottom; transform: rotate(-90deg); right: 20px; top: 0px; text-align: center;">
 			<div class="filter-button" id="filter1-button">Animation</div>
 			<div class="filter-button" id="filter2-button">Illustration</div>
@@ -63,8 +64,8 @@
 	</div>
 	<div id="mouse_effect" style="position: fixed; width: 100%; height: 100%; pointer-events: none; mix-blend-mode: difference; z-index: 2;"></div>
 	<script src="index.js" type="text/javascript"></script>
-	<script src="porfile_pic.js" type="text/javascript"></script>
-	<script src="mouse_effect.js" type="text/javascript"></script>
-	<script src="background.js" type="text/javascript"></script>
+	<script src="canvas/porfile_pic.js" type="text/javascript"></script>
+	<script src="canvas/mouse_effect.js" type="text/javascript"></script>
+	<script src="canvas/background.js" type="text/javascript"></script>
 </body>
 </html>

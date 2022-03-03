@@ -99,6 +99,7 @@ div::-webkit-scrollbar {
 }
 
 .link {
+	position: relative;
 	width: 120px;
 	height: 20px;
 	background: #eeeeee;
@@ -198,7 +199,7 @@ div::-webkit-scrollbar {
 		max-width: 400px;
 	}
 
-	.image img, .image video {
+	.image * {
 		height: auto;
 		width: 100%;
 	}
@@ -210,7 +211,7 @@ div::-webkit-scrollbar {
 		width: 300px;
 	}
 
-	.image img, .image video {
+	.image * {
 		height: auto;
 		width: 100%;
 	}
