@@ -1,8 +1,24 @@
+let filters_state = []
+let filter_speed = 500
+
 for(let card of gallery) {
+	if($(`#${card.class}-contents`).length <= 0) {
+		$(`#contents`).append(`<div class="filter-button" id="${card.class}-button">${card.name}</div><br>`)
+		$('#contents').append(`<div id="${card.class}-contents" style="display: block; position: relative;"></div>`)
+		$(`#${card.class}-contents`).append(`<div style="background: white; position: absolute; width: 100%; height: 1px"></div>`)
+		$(`#${card.class}-contents`).append(`<div style="background: white; opacity: 0.2; position: absolute; width: 100%; height: 100%"></div>`)
+		filters_state[card.class] = true
+		$(`#${card.class}-button`).click(() => {
+			$(`#${card.class}-button`).css('background', (!filters_state[card.class])? 'white' : '#555555')
+			if(filters_state[card.class]) $(`#${card.class}-contents`).hide(filter_speed)
+			else $(`#${card.class}-contents`).show(filter_speed)
+			filters_state[card.class] = !filters_state[card.class]
+		})
+	}
 	let media
 	if(card.type == 'image') media = `<img src="${card.src}" alt="" draggable="false"${(card.link)? ` class="image-link"` : ``}">`
 	if(card.type == 'video') media = `<video autoplay loop muted playsinline disablepictureinpicture${(card.link)? ` class="image-link"` : ``}><source src="${card.src}" type="video/mp4"></video>`
-	$('#contents').append(`<div class="image ${card.class}"><a${(card.link)? ` href="${card.link}" target="_blank"` : ``}>${media}</a></div>`)
+	$(`#${card.class}-contents`).append(`<div class="image ${card.class}"><a${(card.link)? ` href="${card.link}" target="_blank"` : ``}>${media}</a></div>`)
 }
 
 let callback = (entries, observer) => {
@@ -15,41 +31,6 @@ let callback = (entries, observer) => {
 let observer = new IntersectionObserver(callback, { threshold: 0 })
 document.querySelectorAll('video').forEach(element => {
 	observer.observe(element)
-})
-
-let filter1 = true
-let filter2 = true
-let filter3 = true
-let filter4 = true
-
-let filter_speed = 500
-
-$('#filter1-button').click(() => {
-	$('#filter1-button').css('color', (!filter1)? '#ffffff' : '#888888')
-	if(filter1) $('.filter1').hide(filter_speed)
-	else $('.filter1').show(filter_speed)
-	filter1 = !filter1
-})
-
-$('#filter2-button').click(() => {
-	$('#filter2-button').css('color', (!filter2)? '#ffffff' : '#888888')
-	if(filter2) $('.filter2').hide(filter_speed)
-	else $('.filter2').show(filter_speed)
-	filter2 = !filter2
-})
-
-$('#filter3-button').click(() => {
-	$('#filter3-button').css('color', (!filter3)? '#ffffff' : '#888888')
-	if(filter3) $('.filter3').hide(filter_speed)
-	else $('.filter3').show(filter_speed)
-	filter3 = !filter3
-})
-
-$('#filter4-button').click(() => {
-	$('#filter4-button').css('color', (!filter4)? '#ffffff' : '#888888')
-	if(filter4) $('.filter4').hide(filter_speed)
-	else $('.filter4').show(filter_speed)
-	filter4 = !filter4
 })
 
 let info_page = 0
