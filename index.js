@@ -3,9 +3,9 @@ let filter_speed = 500
 
 for(let card of gallery) {
 	if($(`#${card.class}-contents`).length <= 0) {
-		$(`#contents`).append(`<div class="filter-button" id="${card.class}-button">${card.name}</div><br>`)
+		$(`#contents`).append(`<div class="filter-button" id="${card.class}-button">${card.tag}</div><br>`)
 		$('#contents').append(`<div id="${card.class}-contents" style="display: block; position: relative;"></div>`)
-		$(`#${card.class}-contents`).append(`<div style="background: white; position: absolute; width: 100%; height: 1px"></div>`)
+		$(`#${card.class}-contents`).append(`<div style="background: white; position: absolute; height: 100%; width: 2px"></div>`)
 		$(`#${card.class}-contents`).append(`<div style="background: white; opacity: 0.2; position: absolute; width: 100%; height: 100%"></div>`)
 		filters_state[card.class] = true
 		$(`#${card.class}-button`).click(() => {
@@ -16,9 +16,11 @@ for(let card of gallery) {
 		})
 	}
 	let media
-	if(card.type == 'image') media = `<img src="${card.src}" alt="" draggable="false"${(card.link)? ` class="image-link"` : ``}">`
-	if(card.type == 'video') media = `<video autoplay loop muted playsinline disablepictureinpicture${(card.link)? ` class="image-link"` : ``}><source src="${card.src}" type="video/mp4"></video>`
-	$(`#${card.class}-contents`).append(`<div class="image ${card.class}"><a${(card.link)? ` href="${card.link}" target="_blank"` : ``}>${media}</a></div>`)
+	let link = (card.link)? `<a href="${card.link}" target="_blank">Open Link</a>` : ``
+	if(card.type == 'image') media = `<img src="${card.src}" alt="" draggable="false"}">`
+	if(card.type == 'video') media = `<video autoplay loop muted playsinline disablepictureinpicture}><source src="${card.src}" type="video/mp4"></video>`
+	if(card.type == 'link') media = `<div class="card" style="display: flex; align-items: center; justify-content: center; background: #22aacc; width: 355px;">${card.text}</div>`
+	$(`#${card.class}-contents`).append(`<div class="image ${card.class}">${media}${link}</div>`)
 }
 
 let callback = (entries, observer) => {

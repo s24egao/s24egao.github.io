@@ -106,7 +106,7 @@ div::-webkit-scrollbar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 10px;
+	margin: 8px;
 	text-decoration: none;
 	color: black;
 	-webkit-user-select: none;
@@ -148,44 +148,49 @@ div::-webkit-scrollbar {
 
 .image {
 	display: inline-block;
-	margin: 20px;
+	margin: 24px;
 	height: 200px;
+	position: relative;
 	transition-duration: 0.3s;
 }
 
-.image img, .image video {
+.image img, .image video, .image .card {
 	display: block;
 	height: 100%;
-	transition-duration: 0.3s;
+	transition-duration: 0.2s;
 	transform: scale(1);
 	-webkit-user-select: none;
-	outline: solid white 1px;
 }
 
-.image img:hover, .image video:hover {
+.image:hover img video, .image:hover video, .image:hover .card {
 	transform: scale(1.1);
 }
 
-.image-link:hover {
-	outline: solid #aaeeff 8px;
+.image a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	opacity: 0;
 }
 
 .filter-button {
 	position: relative;
-	margin: 80px 20px 20px 20px;
+	margin: 80px 0px 20px 0px;
+	padding: 0px 30px 0px 30px;
 	display: inline-block;
 	text-align: center;
 	background: white;
 	color: black;
 	font-family: Noto Sans TC;
-	font-size: 36px;
+	font-size: 32px;
 	font-weight: 300;
-	transition-duration: 0.3s;
+	transition-duration: 0.2s;
 	-webkit-user-select: none;
 }
 
 .filter-button:hover {
-	transform: translateY(-8px);
+	transform: translateX(12px);
 }
 
 @media screen and (max-width: 720px) {
