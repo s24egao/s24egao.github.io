@@ -19,7 +19,6 @@ for(let card of gallery) {
 	let link = (card.link)? `<a href="${card.link}" target="_blank">Open Link</a>` : ``
 	if(card.type == 'image') media = `<img src="${card.src}" alt="" draggable="false"}">`
 	if(card.type == 'video') media = `<video autoplay loop muted playsinline disablepictureinpicture}><source src="${card.src}" type="video/mp4"></video>`
-	if(card.type == 'link') media = `<div class="card" style="display: flex; align-items: center; justify-content: center; background: #22aacc; width: 355px;">${card.text}</div>`
 	$(`#${card.class}-contents`).append(`<div class="image ${card.class}">${media}${link}</div>`)
 }
 

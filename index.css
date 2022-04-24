@@ -154,7 +154,7 @@ div::-webkit-scrollbar {
 	transition-duration: 0.3s;
 }
 
-.image img, .image video, .image .card {
+.image img, .image video {
 	display: block;
 	height: 100%;
 	transition-duration: 0.2s;
@@ -162,7 +162,7 @@ div::-webkit-scrollbar {
 	-webkit-user-select: none;
 }
 
-.image:hover img video, .image:hover video, .image:hover .card {
+.image:hover img video, .image:hover video {
 	transform: scale(1.1);
 }
 
