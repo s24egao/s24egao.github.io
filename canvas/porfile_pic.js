@@ -4,7 +4,7 @@ const porfile_pic = p => {
 		p.scale(0.36)
 		p.background(0)
 		
-		let fog = p.color(p.random(50, 120), p.random(50, 120), p.random(50, 120), 20)
+		let fog = p.color(p.random(50, 120), p.random(50, 120), p.random(50, 120), 40)
 		
 		for(let i = 0; i < 500; i++) {
 			p.noStroke()
@@ -13,11 +13,11 @@ const porfile_pic = p => {
 		}
 		
 		p.translate(250, 400)
-		for(let i = 0; i < 25; i++) {
+		for(let i = 0; i < 12; i++) {
 			p.push()
-			p.scale(1.5)
-			for(let j = 0; j < 24 - i; j++) {
-				p.scale(0.85)	
+			p.scale(2.25)
+			for(let j = 0; j < 11 - i; j++) {
+				p.scale(0.72)	
 			}
 			p.drawGround()
 			p.drawStreet(1)

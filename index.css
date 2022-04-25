@@ -48,7 +48,7 @@ div::-webkit-scrollbar {
 	display: flex;
 	width: 260px;
 	height: 200px;
-	margin: 50px 0px 0px 0px;
+	margin: 40px 0px 0px 0px;
 	left: 0px;
 	transition-duration: 0.5s;
 }
@@ -58,7 +58,7 @@ div::-webkit-scrollbar {
 	width: 260px;
 	color: #999999;
 	font-family: Noto Sans TC;
-	font-size: 18px;
+	font-size: 17px;
 	font-weight:300;
 	line-height: 27px;
 	-webkit-user-select: none;
