@@ -88,20 +88,20 @@ div::-webkit-scrollbar {
 	color: #eeeeee;
 }
 
-#porfile_pic canvas {
+#porfile_pic * {
 	width: 100%;
 	transition-duration: 0.3s;
 	transform: scale(1);
 }
 
-#porfile_pic:hover canvas {
-	transform: scale(1.2);
+#porfile_pic:hover * {
+	transform: scale(1.1);
 }
 
 .link {
 	position: relative;
 	width: 120px;
-	height: 20px;
+	height: 22px;
 	background: #eeeeee;
 	display: flex;
 	justify-content: center;
@@ -121,7 +121,7 @@ div::-webkit-scrollbar {
 .link div {
 	font-family: Noto Sans TC;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 20px;
 	transform: translateY(2px);
 	transition-duration: 0.3s;
 }
@@ -148,21 +148,21 @@ div::-webkit-scrollbar {
 
 .image {
 	display: inline-block;
-	margin: 24px;
-	height: 200px;
+	margin: 20px;
+	width: 380px;
 	position: relative;
 }
 
 .image img, .image video {
 	display: block;
-	height: 100%;
+	width: 100%;
 	transition-duration: 0.3s;
 	transform: scale(1);
 	-webkit-user-select: none;
 }
 
 .image:hover img, .image:hover video {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
 .image a {
@@ -190,6 +190,13 @@ div::-webkit-scrollbar {
 	filter: brightness(0.3);
 }
 
+.contents-block {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	animation: slide-right 0.5s both;
+}
+
 .filter-button {
 	position: relative;
 	margin: 80px 0px 20px 0px;
@@ -203,10 +210,26 @@ div::-webkit-scrollbar {
 	font-weight: 300;
 	transition-duration: 0.2s;
 	-webkit-user-select: none;
+	animation: slide-right 0.5s 0.3s backwards;
 }
 
 .filter-button:hover {
 	transform: translateX(12px);
+}
+
+@keyframes slide-up {
+	from { transform: translateY(30px); opacity: 0; }
+	to { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes slide-right {
+	from { transform: translateX(-60px); opacity: 0; }
+	to { transform: translateX(0px); opacity: 1; }
+}
+
+@keyframes appear {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 @media screen and (max-width: 720px) {
@@ -214,27 +237,5 @@ div::-webkit-scrollbar {
 		position: fixed;
 		width: 100%;
 		left: 0%;
-	}
-
-	.image {
-		height: auto;
-		max-width: 400px;
-	}
-
-	.image * {
-		height: auto;
-		width: 100%;
-	}
-}
-
-@media screen and (min-width: 721px) and (max-width: 900px) {
-	.image {
-		height: auto;
-		width: 300px;
-	}
-
-	.image * {
-		height: auto;
-		width: 100%;
 	}
 }

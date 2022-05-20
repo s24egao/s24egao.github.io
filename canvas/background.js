@@ -57,7 +57,7 @@ void main() {
 		p.pixelDensity(1)
 		graphics.pixelDensity(1)
 		graphics.background(0)
-		graphics.stroke(255)
+		graphics.stroke(150)
 		graphics.noiseDetail(2, 1)
 		graphics.strokeWeight(2)
 		for(let i = 0; i < 50; i++) { particles.push(new particle()) }
