@@ -232,10 +232,22 @@ div::-webkit-scrollbar {
 	to { opacity: 1; }
 }
 
+@keyframes arrow {
+	from { transform: translateX(-20px); }
+	to { transform: translateX(0px); }
+}
+
+
 @media screen and (max-width: 720px) {
 	#info {
 		position: fixed;
 		width: 100%;
 		left: 0%;
+	}
+}
+
+@media screen and (min-width: 720px) {
+	#arrow div {
+		display: none;
 	}
 }

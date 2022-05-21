@@ -29,14 +29,11 @@ const mouse_effect = p => {
 
 	p.draw = () => {
 		p.clear()
-		if(p.mouseIsPressed) p.mouseMoved()
+		if(p.mouseIsPressed || p.movedX != 0 || p.movedY != 0) {
+			if(p.frameCount % 2 == 1) p.particles.push(new Particle(p.mouseX, p.mouseY))
+		}
 		for(let item of p.particles) { item.update() }
 		p.particles = p.particles.filter(item => item.time > 0)
-	}
-
-	p.mouseMoved = () => {
-		if(p.frameCount % 2 == 1) return
-		p.particles.push(new Particle(p.mouseX, p.mouseY))
 	}
 
 	p.windowResized = () => {
