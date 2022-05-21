@@ -34,17 +34,42 @@ $('#info-text').click(() => {
 })
 
 let show_info = true
+let swipe = false
+let mouse_x
 
-$('#info-click').click(() => {
+function touch_start(e) {
 	if(window.innerWidth > 720) return
-	if(show_info) $('#info').css('left', '-95%').css('opacity', '0.2')
-	else $('#info').css('left', '0%').css('opacity', '1')
+	swipe = true
+	let position_x = (e.type.startsWith('touch'))? e.touches[0].clientX : e.clientX
+	$('#info').css('transition-duration', '0s')
+	mouse_x = position_x - parseFloat($('#info').css('left'))
+}
+
+function touch_move(e) {
+	if(!swipe || window.innerWidth > 720) return
+	let position_x = (e.type.startsWith('touch'))? e.touches[0].clientX : e.clientX
+	if(position_x - mouse_x >= 0) return
+	$('#info').css('left', `${position_x - mouse_x}px`)
+}
+
+function touch_end(e) {
+	if(!swipe || window.innerWidth > 720) return
+	swipe = false
+	let position_x = (e.type.startsWith('touch'))? e.changedTouches[0].clientX : e.clientX
+	$('#info').css('transition-duration', '0.5s')
+	if((!show_info && position_x - mouse_x < -30)) $('#info').css('left', '-94%').css('opacity', '0.2')
+	else $('#info').css('left', '0px').css('opacity', '1')
 	show_info = !show_info
-})
+}
+
+$(window).on('touchmove', touch_move)
+$(window).on('mousemove', touch_move)
+$(window).on('touchend', touch_end)
+$(window).on('mouseup', touch_end)
 
 $(window).resize(() => {
-	if(show_info) return
 	if(window.innerWidth <= 720) return
+	swipe = false
 	show_info = true
-	$('#info').css('left', '0%').css('opacity', '1')
+	$('#info').css('transition-duration', '0.5s').css('left', '0px').css('opacity', '1')
 })
