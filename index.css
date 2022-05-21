@@ -237,6 +237,9 @@ div::-webkit-scrollbar {
 	to { transform: translateX(0px); }
 }
 
+#arrow div {
+	opacity: 0;
+}
 
 @media screen and (max-width: 720px) {
 	#info {
@@ -244,10 +247,8 @@ div::-webkit-scrollbar {
 		width: 100%;
 		left: 0%;
 	}
-}
 
-@media screen and (min-width: 720px) {
 	#arrow div {
-		display: none;
+		opacity: 1;
 	}
 }

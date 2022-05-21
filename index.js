@@ -42,6 +42,9 @@ function touch_start(e) {
 	swipe = true
 	let position_x = (e.type.startsWith('touch'))? e.touches[0].clientX : e.clientX
 	$('#info').css('transition-duration', '0s')
+	$('#arrow-up').css('transform', 'rotate(90deg)')
+	$('#arrow-down').css('transform', 'rotate(-90deg)')
+	$('#arrow').css('animation', 'none')
 	mouse_x = position_x - parseFloat($('#info').css('left'))
 }
 
@@ -57,7 +60,10 @@ function touch_end(e) {
 	swipe = false
 	let position_x = (e.type.startsWith('touch'))? e.changedTouches[0].clientX : e.clientX
 	$('#info').css('transition-duration', '0.5s')
-	if((!show_info && position_x - mouse_x < -30)) $('#info').css('left', '-94%').css('opacity', '0.2')
+	$('#arrow-up').css('transform', 'rotate(60deg)')
+	$('#arrow-down').css('transform', 'rotate(-60deg)')
+	$('#arrow').css('animation', 'arrow 1s 0s infinite alternate-reverse')
+	if((!show_info && position_x - mouse_x < -30)) $('#info').css('left', '-93%').css('opacity', '0.2')
 	else $('#info').css('left', '0px').css('opacity', '1')
 	show_info = !show_info
 }
