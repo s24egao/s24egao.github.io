@@ -4,7 +4,7 @@ let gallery = [
 	{ src: 'contents/image20.mp4', width: 889 },
 	{ src: 'contents/image19.jpg', width: 889 },
 	{ src: 'contents/image18.jpg', width: 889, link: 'https://s24egao.github.io/motion' },
-	{ src: 'contents/image17.jpg', width: 833 },
+	{ src: 'contents/image17.jpg', width: 889 },
 	{ src: 'contents/image16.jpg', width: 833 },
 	{ src: 'contents/image15.jpg', width: 834 },
 	{ src: 'contents/image14.jpg', width: 375 },
