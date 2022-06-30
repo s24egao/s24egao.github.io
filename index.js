@@ -5,7 +5,7 @@ for(let item of gallery) {
 	let link = (item.link)? `<a href="${item.link}" target="_blank">Open Link</a>` : ``
 	if(item.src.endsWith('.jpg')) media = `<img src="${item.src}" alt="" draggable="false"}">`
 	if(item.src.endsWith('.mp4')) media = `<video autoplay loop muted playsinline disablepictureinpicture><source src="${item.src}" type="video/mp4"></video>`
-	$(`#contents`).append(`<div class="image ${item.class}" style="animation: slide-up 0.5s ${i * 0.1}s backwards; flex: ${item.width} 0 ${item.width / 3}px;">${media}${link}</div>`)
+	$(`#contents`).append(`<div class="image" style="animation: slide-up 0.5s ${i * 0.1}s backwards; flex: ${item.width} 0 ${item.width / 3}px;">${media}${link}</div>`)
 }
 
 let info_page = 0
