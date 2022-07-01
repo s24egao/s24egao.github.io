@@ -21,4 +21,5 @@ let gallery = [
 	{ src: 'contents/image3.jpg', width: 667 },
 	{ src: 'contents/image2.jpg', width: 889 },
 	{ src: 'contents/image1.jpg', width: 667 },
+	{ src: '', width: 899 }
 ]

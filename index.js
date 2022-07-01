@@ -1,7 +1,7 @@
 let i = 0
 for(let item of gallery) {
 	i++
-	let media
+	let media = ''
 	let link = (item.link)? `<a href="${item.link}" target="_blank">Open Link</a>` : ``
 	if(item.src.endsWith('.jpg')) media = `<img src="${item.src}" alt="" draggable="false"}">`
 	if(item.src.endsWith('.mp4')) media = `<video autoplay loop muted playsinline disablepictureinpicture><source src="${item.src}"></video>`
