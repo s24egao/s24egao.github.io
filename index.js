@@ -46,7 +46,7 @@ function touch_end(e) {
 	$('#arrow-up').css('transform', 'rotate(60deg)')
 	$('#arrow-down').css('transform', 'rotate(-60deg)')
 	$('#arrow').css('animation', 'arrow 1s 0s infinite alternate-reverse')
-	if((!show_info && position_x - mouse_x < -30)) $('#info').css('left', '-93%').css('opacity', '0.2')
+	if((!show_info && position_x - mouse_x < -30)) $('#info').css('left', '-92%').css('opacity', '0.2')
 	else $('#info').css('left', '0px').css('opacity', '1')
 	show_info = !show_info
 }
