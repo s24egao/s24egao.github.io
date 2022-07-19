@@ -211,8 +211,8 @@ div::-webkit-scrollbar {
 }
 
 @keyframes arrow {
-	from { transform: translateX(-20px); }
-	to { transform: translateX(0px); }
+	from { transform: translateY(-20px) rotate(90deg); }
+	to { transform: translateY(0px) rotate(90deg); }
 }
 
 #arrow div {
