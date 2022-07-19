@@ -5,16 +5,29 @@ for(let item of gallery) {
 	let link = (item.link)? `<a href="${item.link}" target="_blank">Open Link</a>` : ``
 	if(item.src.endsWith('.jpg')) media = `<img src="${item.src}" alt="" draggable="false"}">`
 	if(item.src.endsWith('.mp4')) media = `<video autoplay loop muted playsinline disablepictureinpicture><source src="${item.src}"></video>`
-	$(`#contents`).append(`<div id="image_${i}" class="image" style="animation: slide-up 0.5s ${i * 0.1 + 0.2}s backwards;">${media}${link}</div>`)
+	$(`#contents`).append(`<div id="image_${i}" class="image" style="opacity: 0;">${media}${link}</div>`)
 	
 	let mediaElement = document.getElementById(`image_${i}`) 
-	if(item.src.endsWith('.jpg')) mediaElement.childNodes[0].onload = () => { 
-		let aspect = mediaElement.childNodes[0].naturalWidth / mediaElement.childNodes[0].naturalHeight
-		mediaElement.setAttribute('style', `${mediaElement.getAttribute('style')} flex: ${aspect} 1 ${aspect * 175}px`)
-	}
-	if(item.src.endsWith('.mp4')) mediaElement.childNodes[0].onloadeddata = () => { 
-		let aspect = mediaElement.childNodes[0].videoWidth / mediaElement.childNodes[0].videoHeight
-		mediaElement.setAttribute('style', `${mediaElement.getAttribute('style')} flex: ${aspect} 1 ${aspect * 175}px`)
+	let transition_delay = i * 0.1 + 0.2
+	if(item.src.endsWith('.jpg')) {
+		if(mediaElement.childNodes[0].complete) {
+			let aspect = mediaElement.childNodes[0].naturalWidth / mediaElement.childNodes[0].naturalHeight
+			mediaElement.setAttribute('style', `animation: slide-up 0.5s ${transition_delay}s backwards; flex: ${aspect} 1 ${aspect * 175}px`)
+		}
+		else mediaElement.childNodes[0].onload = () => { 
+			let aspect = mediaElement.childNodes[0].naturalWidth / mediaElement.childNodes[0].naturalHeight
+			mediaElement.setAttribute('style', `animation: slide-up 0.5s ${transition_delay}s backwards; flex: ${aspect} 1 ${aspect * 175}px`)
+		}
+	}	
+	if(item.src.endsWith('.mp4')) {
+		if(mediaElement.childNodes[0].readyState == 4) {
+			let aspect = mediaElement.childNodes[0].videoWidth / mediaElement.childNodes[0].videoHeight
+			mediaElement.setAttribute('style', `animation: slide-up 0.5s ${transition_delay}s backwards; flex: ${aspect} 1 ${aspect * 175}px`)
+		}
+		else mediaElement.childNodes[0].onloadeddata = () => { 
+			let aspect = mediaElement.childNodes[0].videoWidth / mediaElement.childNodes[0].videoHeight
+			mediaElement.setAttribute('style', `animation: slide-up 0.5s ${transition_delay}s backwards; flex: ${aspect} 1 ${aspect * 175}px`)
+		}
 	}
 }
 $(`#contents`).append(`<div class="image" style="flex: 1 1 300px; margin-top: 0px; margin-bottom: 0px;"></div>`)
