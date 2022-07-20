@@ -6,15 +6,15 @@ for(let item of gallery) {
 	let media = (!is_video)? `<img src="${item.src}" alt="" draggable="false"}">` : `<video autoplay loop muted playsinline disablepictureinpicture src="${item.src}"></video>`
 	$(`#contents`).append(`<div id="image_${i}" class="image" style="opacity: 0;">${media}${link}</div>`)
 	
-	let mediaElement = document.getElementById(`image_${i}`) 
+	let mediaElement = document.getElementById(`image_${i}`).childNodes[0]
 	let delay = i * 0.1 + 0.2
-	if((!is_video)? mediaElement.childNodes[0].complete : mediaElement.childNodes[0].readyState > 0) {
-		let aspect = (!is_video)? mediaElement.childNodes[0].naturalWidth / mediaElement.childNodes[0].naturalHeight : mediaElement.childNodes[0].videoWidth / mediaElement.childNodes[0].videoHeight
-		mediaElement.setAttribute('style', `animation: slide-up 0.5s ${delay}s backwards; flex: ${aspect} 1 ${aspect * 175}px`)
+	if((!is_video)? mediaElement.complete : mediaElement.readyState > 0) {
+		let aspect = (!is_video)? mediaElement.naturalWidth / mediaElement.naturalHeight : mediaElement.videoWidth / mediaElement.videoHeight
+		mediaElement.parentElement.setAttribute('style', `animation: slide-up 0.5s ${delay}s backwards; flex: ${aspect * 10} 1 ${aspect * 175}px`)
 	}
-	else mediaElement.childNodes[0].addEventListener((!is_video)? 'load' : 'loadeddata', () => { 
-		let aspect = (!is_video)? mediaElement.childNodes[0].naturalWidth / mediaElement.childNodes[0].naturalHeight : mediaElement.childNodes[0].videoWidth / mediaElement.childNodes[0].videoHeight
-		mediaElement.setAttribute('style', `animation: slide-up 0.5s ${delay}s backwards; flex: ${aspect} 1 ${aspect * 175}px`)
+	else mediaElement.addEventListener((!is_video)? 'load' : 'loadeddata', () => { 
+		let aspect = (!is_video)? mediaElement.naturalWidth / mediaElement.naturalHeight : mediaElement.videoWidth / mediaElement.videoHeight
+		mediaElement.parentElement.setAttribute('style', `animation: slide-up 0.5s ${delay}s backwards; flex: ${aspect * 10} 1 ${aspect * 175}px`)
 	})
 }
 $(`#contents`).append(`<div class="image" style="flex: 1 1 300px; margin-top: 0px; margin-bottom: 0px;"></div>`)
