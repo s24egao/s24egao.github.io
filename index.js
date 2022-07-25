@@ -57,14 +57,16 @@ function touch_end(e) {
 	swipe = false
 	let position_y = (e.type.startsWith('touch'))? e.changedTouches[0].clientY : e.clientY
 	$('#info').css('transition-duration', '0.5s')
-	if((show_info && position_y - mouse_y < -30)) $('#info').css('top', `-${innerHeight - 60}px`).css('background', 'rgba(255, 255, 255, 0.3)').css('backdrop-filter', 'blur(8px)')
-	else {
+	if((show_info && position_y - mouse_y < -30)) {
+		$('#info').css('top', `-${innerHeight - 60}px`).css('background', 'rgba(255, 255, 255, 0.3)').css('backdrop-filter', 'blur(8px)')
+		show_info = false
+	} else {
 		$('#arrow-up').css('transform', 'rotate(60deg)')
 		$('#arrow-down').css('transform', 'rotate(-60deg)')
 		$('#info').css('top', '0px').css('background', 'white')
 		$('#arrow').css('animation', 'arrow 1s 0s infinite alternate-reverse')
+		show_info = true
 	}
-	show_info = !show_info
 }
 
 $(window).on('touchmove', touch_move)

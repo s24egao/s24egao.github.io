@@ -162,7 +162,7 @@ div::-webkit-scrollbar {
 	-webkit-user-select: none;
 }
 
-.image:hover img, .image:hover video, .image:hover a {
+.image:hover * {
 	opacity: 1;
 	transform: scale(1.1);
 }
