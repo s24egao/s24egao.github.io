@@ -87,7 +87,6 @@ div::-webkit-scrollbar {
 #porfile_pic * {
 	width: 100%;
 	transition-duration: 0.3s;
-	transform: scale(1);
 }
 
 #porfile_pic:hover * {
@@ -146,30 +145,32 @@ div::-webkit-scrollbar {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	-webkit-box-sizing: border-box;
+	transition-duration: 0.3s;
 }
 
 .image {
 	margin: 9px;
 	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	line-height: 0;
 }
 
-.image img, .image video {
+.image * {
 	width: 100%;
 	transition-duration: 0.3s;
-	transform: scale(1);
 	-webkit-user-select: none;
 }
 
-.image:hover img, .image:hover video {
-	transform: scale(1.05);
+.image:hover img, .image:hover video, .image:hover a {
+	opacity: 1;
+	transform: scale(1.1);
 }
 
 .image a {
 	position: absolute;
-	width: 100%;
 	height: 100%;
 	top: 0px;
-	transition-duration: 0.3s;
 	display: flex;
 	color: white;
 	background: rgba(0, 0, 0, 0.6);
@@ -178,11 +179,6 @@ div::-webkit-scrollbar {
 	justify-content: center;
 	align-items: center;
 	opacity: 0;
-}
-
-.image:hover a {
-	opacity: 1;
-	transform: scale(1.05);
 }
 
 .project {
@@ -195,6 +191,7 @@ div::-webkit-scrollbar {
 	height: 200px;
 	margin: 9px;
 	overflow: hidden;
+	border-radius: 8px;
 }
 
 .project img {
@@ -202,6 +199,11 @@ div::-webkit-scrollbar {
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
+	transition-duration: 0.3s;
+}
+
+.project:hover img {
+	transform: scale(1.1);
 }
 
 .project div {
@@ -209,6 +211,11 @@ div::-webkit-scrollbar {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(to right, rgba(30, 30, 30, 0.9) 50%, rgba(30, 30, 30, 0) 100%);
+	transition-duration: 0.3s;
+}
+
+.project:hover div {
+	opacity: 0.8;
 }
 
 .project h1 {
@@ -225,9 +232,10 @@ div::-webkit-scrollbar {
 	border: solid 1px #eeeeee;
 	color: #eeeeee;
 	text-decoration: none;
-	font: Noto Sans TC;
-	padding: 5px 12px 5px 12px;
+	font: 16px Noto Sans TC;
+	padding: 5px 15px 5px 15px;
 	transition-duration: 0.3s;
+	border-radius: 17.5px;
 }
 
 .project a:hover {
@@ -268,5 +276,9 @@ div::-webkit-scrollbar {
 
 	#arrow div {
 		opacity: 1;
+	}
+
+	#contents {
+		padding: 75px 15px 15px 15px;
 	}
 }
