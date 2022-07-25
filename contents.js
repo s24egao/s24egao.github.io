@@ -1,4 +1,6 @@
 let gallery = [
+	{ project: '3D Webpage', src: 'contents/image11.jpg', link: 'https://s24egao.github.io/3d' },
+	{ project: 'Hand Tracking Game', src: 'contents/image24.jpg', link: 'https://s24egao.github.io/handtracking-game' },
 	{ src: 'contents/image23.jpg' },
 	{ src: 'contents/image22.jpg' },
 	{ src: 'contents/image21.jpg' },
@@ -11,7 +13,7 @@ let gallery = [
 	{ src: 'contents/image14.jpg' },
 	{ src: 'contents/image13.jpg' },
 	{ src: 'contents/image12.jpg' },
-	{ src: 'contents/image11.jpg', link: 'https://s24egao.github.io/3d' },
+	{ src: 'contents/image11.jpg' },
 	{ src: 'contents/image10.jpg' },
 	{ src: 'contents/image9.jpg' },
 	{ src: 'contents/image8.jpg', link: 'https://openprocessing.org/sketch/1508210' },

@@ -57,9 +57,7 @@ div::-webkit-scrollbar {
 	flex: 0 0 100%;
 	width: 260px;
 	color: #999999;
-	font-family: Noto Sans TC;
-	font-size: 17px;
-	font-weight:300;
+	font: 300 17px Noto Sans TC;
 	line-height: 27px;
 	-webkit-user-select: none;
 	transition-duration: 0.5s;
@@ -71,9 +69,7 @@ div::-webkit-scrollbar {
 
 #info-tag {
 	position: absolute;
-	font-family: Noto Sans TC;
-	font-size: 120px;
-	font-weight: 900;
+	font: 900 120px Noto Sans TC;
 	color: transparent;
 	transform-origin: center;
 	transform: rotate(-90deg);
@@ -119,18 +115,14 @@ div::-webkit-scrollbar {
 }
 
 .link div {
-	font-family: Noto Sans TC;
-	font-weight: 500;
-	font-size: 20px;
+	font: 300 20px Noto Sans TC;
 	transform: translateY(2px);
 	transition-duration: 0.3s;
 }
 
 #gallery-tag {
 	position: absolute;
-	font-family: Noto Sans TC;
-	font-size: 120px;
-	font-weight: 900;
+	font: 900 120px Noto Sans TC;
 	color: transparent;
 	transform-origin: center;
 	transform: rotate(-90deg);
@@ -157,7 +149,7 @@ div::-webkit-scrollbar {
 }
 
 .image {
-	margin: 10px;
+	margin: 9px;
 	position: relative;
 }
 
@@ -182,9 +174,7 @@ div::-webkit-scrollbar {
 	color: white;
 	background: rgba(0, 0, 0, 0.6);
 	text-decoration: none;
-	font-family: Noto Sans TC;
-	font-weight: 500;
-	font-size: 36px;
+	font: 500 36px Noto Sans TC;
 	justify-content: center;
 	align-items: center;
 	opacity: 0;
@@ -193,6 +183,56 @@ div::-webkit-scrollbar {
 .image:hover a {
 	opacity: 1;
 	transform: scale(1.05);
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	height: 200px;
+	margin: 9px;
+	overflow: hidden;
+}
+
+.project img {
+	position: absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.project div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, rgba(30, 30, 30, 0.9) 50%, rgba(30, 30, 30, 0) 100%);
+}
+
+.project h1 {
+	position: relative;
+	font: 30px Noto Sans TC;
+	color: #eeeeee;
+	line-height: 1;
+	margin: 10px 10px 10px 30px;
+}
+
+.project a {
+	position: relative;
+	margin: 10px 10px 10px 30px;
+	border: solid 1px #eeeeee;
+	color: #eeeeee;
+	text-decoration: none;
+	font: Noto Sans TC;
+	padding: 5px 12px 5px 12px;
+	transition-duration: 0.3s;
+}
+
+.project a:hover {
+	background: #eeeeee;
+	color: black;
 }
 
 @keyframes slide-up {
