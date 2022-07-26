@@ -75,8 +75,11 @@ $(window).on('touchend', touch_end)
 $(window).on('mouseup', touch_end)
 
 $(window).resize(() => {
-	if(window.innerWidth <= 720) return
-	swipe = false
-	show_info = true
-	$('#info').css('transition-duration', '0.5s').css('top', '0px').css('background', 'white')
+	if(window.innerWidth <= 720) {
+		if(!show_info) $('#info').css('top', `-${innerHeight - 60}px`)
+	} else {
+		swipe = false
+		show_info = true
+		$('#info').css('transition-duration', '0.5s').css('top', '0px').css('background', 'white')
+	}
 })
