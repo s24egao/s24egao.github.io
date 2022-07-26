@@ -33,6 +33,7 @@ $('#info-text').click(() => {
 let show_info = true
 let swipe = false
 let mouse_y
+let offset
 
 function touch_start(e) {
 	if(window.innerWidth > 720) return
@@ -43,13 +44,13 @@ function touch_start(e) {
 	$('#arrow-down').css('transform', 'rotate(-90deg)')
 	$('#arrow').css('animation', 'none')
 	mouse_y = position_y
+	offset = parseFloat($('#info').css('top'))
 }
 
 function touch_move(e) {
 	if(!swipe || window.innerWidth > 720) return
 	let position_y = (e.type.startsWith('touch'))? e.touches[0].clientY : e.clientY
-	if(position_y - mouse_y >= 0) return
-	$('#info').css('top', `${position_y - mouse_y}px`)
+	if(position_y - mouse_y < 0 || !show_info) $('#info').css('top', `${position_y - mouse_y + offset}px`)
 }
 
 function touch_end(e) {
