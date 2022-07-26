@@ -42,7 +42,7 @@ function touch_start(e) {
 	$('#arrow-up').css('transform', 'rotate(90deg)')
 	$('#arrow-down').css('transform', 'rotate(-90deg)')
 	$('#arrow').css('animation', 'none')
-	mouse_y = position_y - parseFloat($('#info').css('top'))
+	mouse_y = position_y
 }
 
 function touch_move(e) {
