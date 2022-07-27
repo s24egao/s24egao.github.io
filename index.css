@@ -84,12 +84,12 @@ div::-webkit-scrollbar {
 	color: #eeeeee;
 }
 
-#porfile_pic * {
+#profile_pic * {
 	width: 100%;
 	transition-duration: 0.3s;
 }
 
-#porfile_pic:hover * {
+#profile_pic:hover * {
 	transform: scale(1.1);
 }
 
@@ -212,7 +212,7 @@ div::-webkit-scrollbar {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(to right, rgba(30, 30, 30, 0.95) 50%, rgba(30, 30, 30, 0) 100%);
+	background: linear-gradient(to right, rgba(30, 30, 30, 0.8) 50%, rgba(30, 30, 30, 0.1) 100%);
 	transition-duration: 1s;
 }
 
