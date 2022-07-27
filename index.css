@@ -149,7 +149,7 @@ div::-webkit-scrollbar {
 }
 
 .image {
-	margin: 9px;
+	margin: 8px;
 	position: relative;
 	overflow: hidden;
 	border-radius: 8px;
@@ -190,7 +190,7 @@ div::-webkit-scrollbar {
 	position: relative;
 	width: 100%;
 	height: 200px;
-	margin: 9px;
+	margin: 8px;
 	overflow: hidden;
 	border-radius: 8px;
 	z-index: 0;
@@ -282,5 +282,19 @@ div::-webkit-scrollbar {
 
 	#contents {
 		padding: 75px 15px 15px 15px;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	html {
+		background: #eeeeee;
+	}
+
+	#gallery-tag {
+		-webkit-text-stroke: 2px #dddddd;
+	}
+
+	#gallery:hover #gallery-tag {
+		color: #dddddd;
 	}
 }
