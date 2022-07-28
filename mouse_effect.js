@@ -27,7 +27,7 @@ window.addEventListener('touchmove' ,e => {
 window.addEventListener('mousedown' ,e => {
 	mouseIsPressed = (e.button == 0)
 })
-window.addEventListener('mouseup' ,() => {
+window.addEventListener('mouseup' ,e => {
 	if(e.button == 0) mouseIsPressed = false
 })
 window.onresize()
