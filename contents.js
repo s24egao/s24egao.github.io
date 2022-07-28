@@ -1,5 +1,5 @@
 let gallery = [
-	{ project: '3D Webpage', src: 'contents/image11.jpg', link: 'https://s24egao.github.io/3d' },
+	{ project: '3D Webpage', src: 'contents/image25.jpg', link: 'https://s24egao.github.io/3d' },
 	{ project: 'Hand Tracking Game', src: 'contents/image24.jpg', link: 'https://s24egao.github.io/handtracking-game' },
 	{ src: 'contents/image23.jpg' },
 	{ src: 'contents/image22.jpg' },
