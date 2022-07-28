@@ -20,11 +20,15 @@ window.addEventListener('mousemove' ,e => {
 	mouseX = e.clientX
 	mouseY = e.clientY
 })
-window.addEventListener('mousedown' ,() => {
-	mouseIsPressed = true
+window.addEventListener('touchmove' ,e => {
+	mouseX = e.touches[0].clientX
+	mouseY = e.touches[0].clientY
+})
+window.addEventListener('mousedown' ,e => {
+	mouseIsPressed = (e.button == 0)
 })
 window.addEventListener('mouseup' ,() => {
-	mouseIsPressed = false
+	if(e.button == 0) mouseIsPressed = false
 })
 window.onresize()
 
